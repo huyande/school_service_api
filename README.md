@@ -26,9 +26,17 @@
 返回值：{"result":true/false}
 
 ### 3 授权此用户 ###
->Post： localhost:8080/authorizeUser?openid=XXX&....
+>Post： localhost:8080/authorizeUser
 
 参数:openid、nickname、avatarurl、province、city、gender
+
+    {"openid"："CCC",
+     "nickname":"XXXX",
+    "avatarurl":"DDDD",
+    "province":"sssss",
+    "city":"DDD",
+    "gender":1
+    }
 
 返回值：{"result":true/false}
 
