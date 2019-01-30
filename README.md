@@ -28,7 +28,7 @@
 ### 3 授权此用户 ###
 >Post： localhost:8080/authorizeUser
 
-参数:openid、nickname、avatarurl、province、city、gender
+参数:openid、nickname、avatarurl、province、city、gender，获取到用户信息封装到data 数据域里 格式
 
     {"openid"："CCC",
      "nickname":"XXXX",
@@ -81,7 +81,7 @@
 		"userId": "oBjXq0LC0fNVc74SoTZTYj7OSMKc",
 		"sex": 1
 	},
-	"images": ["http://zwxq.qiqibl.com/tmp_5f9195e2ea66c50deb6cf9ed9f435f0b.jpg"]
+	"image": "http://zwxq.qiqibl.com/tmp_5f9195e2ea66c50deb6cf9ed9f435f0b.jpg"
 	}, {
 	"id": "ce31bc14-0f7e-11e9-b4a9-525400f4c464",
 	"content": "虽然你拒绝了我 但我依旧等你 喜欢一个人 真的会中毒的",
@@ -96,10 +96,20 @@
 		"userId": "oBjXq0K--hdqNF3w0fpvfbNWHiY4",
 		"sex": 0
 	},
-	"images": []
+	"image": ""
 	}]
 
-### 2 新增信息 暂定 ###
+### 2 新增信息###
+POST：localhost:8080/conf/addConf
+参数: content、image、stateNiming、touser、fromuser、openid
+
+    data:{"content":"XXXXX",
+			....
+		}
+返回值
+
+	{"data":1,"other":"Add confession","message":"Add confession success"}
+
 
 
 ### 3 点赞处理 ###
@@ -145,3 +155,16 @@
 	}
 
 ### 5 新增留言  ###
+POST： localhost：8080/conf/addMessage
+参数：confid，openid，message
+
+    data:{"confid":"XXX","openid":"ddddd","message":"XXXSS"}
+
+返回值 
+
+    {"data":1,"other":"add message","message":"Add message success"}
+
+
+
+## 2 吐槽墙相关 API  ##
+
