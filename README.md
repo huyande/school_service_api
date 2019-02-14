@@ -120,7 +120,7 @@ POST：localhost:8080/conf/addConf
 返回值：
 
     {"likedstate":false,"likecount":-1}
-    {"likedstate":false,"likecount":1}
+    {"likedstate":true,"likecount":1}
 
 
 ### 4 查看留言 ###
