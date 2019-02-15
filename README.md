@@ -168,3 +168,81 @@ POST： localhost：8080/conf/addMessage
 
 ## 2 吐槽墙相关 API  ##
 
+### 1 吐槽列表 ###
+Get：http://localhost:8080/roast/roastList?openid=1111&page=1&pagesize=3 
+
+参数：openid、page（当前第几页）、pagesize（每页显示的条数）
+
+返回值
+
+    [{
+	"id": 2,
+	"content": "的官方大哥发的刚发的",
+	"backgroupcolor": 1,
+	"likeCount": 0,
+	"liked": 1,
+	"createtime": "2019/02/15"
+	}, {
+	"id": 1,
+	"content": "发的发的是范德萨范德萨",
+	"backgroupcolor": 1,
+	"likeCount": 10,
+	"liked": 0,
+	"createtime": "2019/02/15"
+	}]
+
+
+### 2 吐槽点赞 ###
+
+GET：localhost:8080/roast/tabLike?roastId=1&openid=oBjXq0IuOhzNIBMrES2DWccz-jmM&likedstate=1
+
+参数：roastId 吐槽信息id、openid 用户唯一标示、likedstate 点赞状态 （0 未点赞、1 已点赞）
+
+返回值：
+
+    {"likedstate":0,"likecount":-1}
+	{"likedstate":1,"likecount":1}
+
+
+### 3 吐槽留言列表 ###
+
+Get:localhost:8080/roast/roastMessages?roastId=1&page=1&pagesize=5
+
+参数:roastId 吐槽信息id、page 当前第几页、pagesize 每页显示条数
+
+
+返回值
+
+    {
+    "data": [
+        {
+            "openid": "oBjXq0JoFULN4P4wHXt_mdsdsds",
+            "message": "dads",
+            "createtime": "02-15"
+        },
+        {
+            "openid": "oBjXq0JoFULN4P4wHXt_mYzI8AMg",
+            "message": "大萨达撒多",
+            "createtime": "02-15"
+        }
+    ],
+    "other": 2,
+    "message": "roast message list"
+	}
+
+
+
+### 4 添加吐槽留言 ###
+
+Post:localhost:8080/roast/addroastMessage
+
+参数
+
+	data:{"roastid":22,"openid":"XXXX","message":"XXXSS"}
+
+
+返回值
+
+	{"data":1,"other":"add roast message","message":"Add roast message success"}
+
+
