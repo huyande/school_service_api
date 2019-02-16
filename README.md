@@ -1,3 +1,4 @@
+
 # school_service_api
 校园服务API 说明
 
@@ -7,7 +8,7 @@
 
 返回值：K8WWlWVTd6-p4WzoIh0IygahkTXgy2dztQVD1Tpk:6Jqlv1acNfKDYI8r1WIzs1WNQDE=:eyJzY29wZSI6InNjaG9vbHdhbGwiLCJkZWFkbGluZSI6MTU0ODc0NDA4MH0=
 
-## 获取用户信息和微信返回的openid API##
+## #获取用户信息和微信返回的openid API##
 
 ### 1 返回session_key 和 openid ###
 
@@ -244,5 +245,10 @@ Post:localhost:8080/roast/addroastMessage
 返回值
 
 	{"data":1,"other":"add roast message","message":"Add roast message success"}
+
+
+
+## 个人中心  ##
+
 
 
