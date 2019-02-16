@@ -250,5 +250,82 @@ Post:localhost:8080/roast/addroastMessage
 
 ## 个人中心  ##
 
+### 1 我的表白信息 ###
 
+GET ：localhost:8080/person/personlove?page=1&pageSize=5&openid=oBjXq0LC0fNVc74SoTZTYj7OSMKc
+
+参数：page 当前页、pageSize 每页显示的条数、openid用户唯一标示
+
+返回值
+
+    [
+    {
+        "id": "70e529fd-f92d-11e8-b496-525400f4c464",
+        "content": "我常常想我是幸运的，在慌张彷徨的年华里，总能遇到一群志和道同的朋友， 我常常也想我一定是这世界上最不幸的，苍狗白云，白驹过隙间，我又总是与他们流离失散。 ​​​",
+        "time": "2019/01/28",
+        "likedCount": 2,
+        "liked": 0,
+        "stateNiming": 1,
+        "user": {
+            "avatar": "https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIZNXcA9x76UOORpEicUTUFCqZiat6mfh7e6R4jVaKJqZTYOicS0icUYQ9oxqYRibW4zKj5Qq0DibPowgUA/132",
+            "touser": "222",
+            "fromuser": "我叫胡颜德",
+            "userId": "oBjXq0LC0fNVc74SoTZTYj7OSMKc",
+            "sex": 1
+        },
+        "image": "http://zwxq.qiqibl.com/tmp_5f9195e2ea66c50deb6cf9ed9f435f0b.jpg"
+    }
+	]
+
+
+### 2 删除我的表白信息 ###
+
+GET:localhost:8080/person/deleteMyLove?confid=06f9cb16-0f6f-11e9-b4a9-525400f4c464
+
+参数：confid 表白信息的id
+
+返回值：
+
+    {"data":true,"other":1,"message":"delete confession success"}
+	{"data":false,"other":0,"message":"delete confession failed"}
+
+
+### 3 查看我的吐槽信息 ###
+GET：localhost:8080/person/personRoast?openid=oBjXq0JoFULN4P4wHXt_mYzI8AMg&page=1&pagesize=5
+
+参数：openid 用户唯一标示、page当前页、pagesize每页显示的条数
+
+返回值
+
+    [
+	    {
+	        "id": 4,
+	        "content": "dsdsdsds",
+	        "backgroupcolor": 1,
+	        "likeCount": 0,
+	        "liked": 0,
+	        "createtime": "2019/02/16"
+	    },
+	    {
+	        "id": 1,
+	        "content": "发的发的是范德萨范德萨",
+	        "backgroupcolor": 1,
+	        "likeCount": 2,
+	        "liked": 1,
+	        "createtime": "2019/02/15"
+	    }
+	]
+
+
+
+### 4 删除我吐槽的信息 ###
+
+GET:localhost:8080/person/deleteMyRoast?roastid=3
+
+参数：roastid 吐槽信息的id
+
+返回值
+
+    {"data":true,"other":1,"message":"delete roast success"}
+	{"data":false,"other":9,"message":"delete roast failed"}
 
