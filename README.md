@@ -245,7 +245,43 @@ Post:localhost:8080/roast/addroastMessage
 返回值
 
 	{"data":1,"other":"add roast message","message":"Add roast message success"}
+	
+	
+### 5 吐槽详情 ###
+GET:http://localhost:83/roast/roastInfo?roastid=1
 
+参数：roastid 吐槽id
+
+返回值
+
+
+	{
+	    "data": {
+		"id": 1,
+		"openid": "o5hD-44zN3233QhYdPbu-OtU05I2",
+		"content": "发的发的是范德萨范德萨",
+		"createtime": "2019-02-15 10:08:13",
+		"backgroupcolor": 1,
+		"state": 1
+	    },
+	    "other": "roastInfo",
+	    "message": "findRoastInfo"
+	}
+
+### 6 新增吐槽 ###
+POST：http://localhost:83/roast/addRoast
+
+参数 openid 、content、backGroupColor
+
+返回值
+
+	{
+	    "data": {
+		"count": 1,
+	    },
+	    "other": "Add Roast",
+	    "message": "Add Roast success"
+	}
 
 
 ## 个人中心  ##
