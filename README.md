@@ -235,11 +235,9 @@ Get:localhost:8080/roast/roastMessages?roastId=1&page=1&pagesize=5
 
 ### 4 添加吐槽留言 ###
 
-Post:localhost:8080/roast/addroastMessage
+Post:localhost:8080/roast/addroastMessage?roastid=22&openid=XXXX&message=CCC
 
 参数
-
-	data:{"roastid":22,"openid":"XXXX","message":"XXXSS"}
 
 
 返回值
@@ -257,12 +255,13 @@ GET:http://localhost:83/roast/roastInfo?roastid=1
 
 	{
 	    "data": {
-		"id": 1,
-		"openid": "o5hD-44zN3233QhYdPbu-OtU05I2",
-		"content": "发的发的是范德萨范德萨",
-		"createtime": "2019-02-15 10:08:13",
-		"backgroupcolor": 1,
-		"state": 1
+		 "id": 6,
+         "content": "xxx",
+         "backgroupcolor": 1,
+         "likeCount": 1,
+         "messageCount": 6,
+         "liked": 1,
+         "createtime": "2019/03/11"
 	    },
 	    "other": "roastInfo",
 	    "message": "findRoastInfo"
@@ -364,4 +363,37 @@ GET:localhost:8080/person/deleteMyRoast?roastid=3
 
     {"data":true,"other":1,"message":"delete roast success"}
 	{"data":false,"other":9,"message":"delete roast failed"}
+
+
+
+
+## 用户分享记录  ##
+
+### 吐槽分享 ###
+GET: http://localhost:83/share/roastShare?roastid=1&openid=o5hD-44zN3233QhYdPbu-OtU05I2
+ 
+参数：roastid、openid
+
+返回值
+
+     {
+        "data": "one OK",
+         "other": "share",
+         "message": "roast share increase"
+     }
+
+### 表白分享 ###
+
+GET：http://localhost:83/share/confShare?confid=44d5a89c-3d8f-11e9-8b7e-525400f4c464&openid=o5hD-44zN3233QhYdPbu-OtU05I2
+
+参数 confid、openid
+
+返回值
+
+
+     {
+        "data": "one OK",
+         "other": "share",
+         "message": "confession  share increase"
+     }
 
